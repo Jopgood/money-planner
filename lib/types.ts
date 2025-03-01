@@ -12,16 +12,16 @@ export interface MonthlyBudget {
   year: number;
 }
 
-export type ExpenseCategory = 
-  | "food" 
-  | "transportation" 
-  | "entertainment" 
-  | "shopping" 
-  | "utilities" 
-  | "housing" 
-  | "health" 
-  | "education" 
-  | "travel" 
+export type ExpenseCategory =
+  | "food"
+  | "transportation"
+  | "entertainment"
+  | "shopping"
+  | "utilities"
+  | "housing"
+  | "health"
+  | "education"
+  | "travel"
   | "other";
 
 export const EXPENSE_CATEGORIES: ExpenseCategory[] = [
@@ -34,7 +34,7 @@ export const EXPENSE_CATEGORIES: ExpenseCategory[] = [
   "health",
   "education",
   "travel",
-  "other"
+  "other",
 ];
 
 export const CATEGORY_COLORS: Record<ExpenseCategory, string> = {
@@ -47,5 +47,5 @@ export const CATEGORY_COLORS: Record<ExpenseCategory, string> = {
   health: "bg-teal-200 text-teal-800",
   education: "bg-indigo-200 text-indigo-800",
   travel: "bg-orange-200 text-orange-800",
-  other: "bg-gray-200 text-gray-800"
+  other: "bg-gray-200 text-gray-800",
 };
