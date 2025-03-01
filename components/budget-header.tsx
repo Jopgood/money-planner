@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { format } from 'date-fns';
-import { DollarSign, PiggyBank, TrendingUp } from 'lucide-react';
+import { PoundSterling, PiggyBank, TrendingUp } from 'lucide-react';
 
 interface BudgetHeaderProps {
   currentDate: Date;
@@ -62,7 +62,7 @@ export function BudgetHeader({ currentDate }: BudgetHeaderProps) {
                   <Label htmlFor="budget">Budget for {format(currentDate, 'MMMM yyyy')}</Label>
                   <div className="relative">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-                      <DollarSign size={16} />
+                      <PoundSterling size={16} />
                     </span>
                     <Input
                       id="budget"
@@ -95,7 +95,7 @@ export function BudgetHeader({ currentDate }: BudgetHeaderProps) {
             
             <div className="bg-secondary rounded-lg p-3 flex flex-col">
               <span className="text-xs text-muted-foreground mb-1 flex items-center">
-                <DollarSign size={14} className="mr-1" /> Spent
+                <PoundSterling size={14} className="mr-1" /> Spent
               </span>
               <span className="text-lg font-semibold">${totalExpenses.toFixed(2)}</span>
             </div>

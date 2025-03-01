@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Trash2, Plus, DollarSign } from 'lucide-react';
+import { Trash2, Plus, PoundSterling } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { toast } from '@/hooks/use-toast';
@@ -91,7 +91,7 @@ export function ExpenseDialog({ date, open, onOpenChange, existingExpenses }: Ex
               <Label htmlFor="amount">Amount</Label>
               <div className="relative">
                 <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
-                  <DollarSign size={16} />
+                  <PoundSterling size={16} />
                 </span>
                 <Input
                   id="amount"

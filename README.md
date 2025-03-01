@@ -1,3 +1,5 @@
 # money-planner
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/Jopgood/money-planner)
+# Manage finances using a calendar!
+
+[Go to stackblitz](https://stackblitz.com/~/github.com/Jopgood/money-planner)

@@ -41,10 +41,10 @@ export function CalendarMonth({ currentDate, onSelectDate }: CalendarMonthProps)
       </div>
       
       {/* Calendar grid */}
-      <div className="grid grid-cols-7 auto-rows-fr">
+      <div className="grid grid-cols-7 auto-rows-fr border-l border-t">
         {/* Empty cells for days before the start of the month */}
         {Array.from({ length: startDay }).map((_, index) => (
-          <div key={`empty-${index}`} className="border-t border-r last:border-r-0" />
+          <div key={`empty-${index}`} className="border-b border-r bg-muuted/80 last:border-r-0 min-h-[80px]" />
         ))}
         
         {/* Actual days of the month */}
@@ -60,7 +60,7 @@ export function CalendarMonth({ currentDate, onSelectDate }: CalendarMonthProps)
               key={day.toString()}
               onClick={() => onSelectDate(day)}
               className={cn(
-                "min-h-[80px] p-2 border-t border-r last:border-r-0 relative flex flex-col items-start transition-colors",
+                "min-h-[80px] p-2 border-b border-r  relative flex flex-col items-start transition-colors",
                 "hover:bg-muted/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                 {
                   "bg-muted/30": !isCurrentMonth,
