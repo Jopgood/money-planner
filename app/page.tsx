@@ -14,11 +14,11 @@ export default function Home() {
         <BudgetHeader currentDate={currentDate} />
         
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="flex-grow lg:w-3/5">
+          <div className="flex-grow lg:w-2/3">
             <Calendar />
           </div>
           
-          <div className="flex-grow lg:w-2/5">
+          <div className="lg:w-1/3">
             <ExpenseSummary currentDate={currentDate} />
           </div>
         </div>

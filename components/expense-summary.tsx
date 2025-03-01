@@ -79,14 +79,31 @@ export function ExpenseSummary({ currentDate }: ExpenseSummaryProps) {
                   fill="#8884d8"
                   dataKey="value"
                   nameKey="name"
-                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
                 >
                   {categoryData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
                 <Tooltip 
-                  formatter={(value: number) => [`$${value.toFixed(2)}`, 'Amount']}
+                  content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      const currentValue = payload[0].value as number;
+                      
+                      // Calculate total from all pie segments
+                      const total = categoryData.reduce((sum, item) => sum + item.value, 0);
+                      
+                      // Calculate percentage
+                      const percentage = (currentValue / total) * 100;
+                      
+                      return (
+                        <div className="bg-white p-2 border rounded shadow">
+                          <p className="text-sm">{`Amount: $${currentValue.toFixed(2)}`}</p>
+                          <p className="text-sm">{`Percent: ${percentage.toFixed(2)}%`}</p>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
                 />
                 <Legend />
               </PieChart>
