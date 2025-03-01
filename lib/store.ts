@@ -18,7 +18,6 @@ interface BudgetState {
 }
 
 export const useBudgetStore = create<BudgetState>()(
-  persist(
     (set, get) => ({
       expenses: [],
       budgets: [],
@@ -85,8 +84,4 @@ export const useBudgetStore = create<BudgetState>()(
         return monthlyExpenses.reduce((total, expense) => total + expense.amount, 0);
       },
     }),
-    {
-      name: 'budget-storage',
-    }
-  )
 );
